@@ -447,6 +447,7 @@ header {
   margin: 0 0 20px 0;
 }
 #recipes-list.block .teaser img {
+  width: 312px;
   float: left;
   position: relative;
   margin: 4px 4px 0 4px;
@@ -705,6 +706,7 @@ footer {
   margin-left: 20px;
 }
 #content .main-image {
+  max-width: 456px;
   float: left;
   position: relative;
   -webkit-border-radius: 5px 5px 0 0;
@@ -712,6 +714,7 @@ footer {
   border-radius: 5px 5px 0 0;
 }
 #detail {
+  width: 456px;
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
