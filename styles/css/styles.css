@@ -970,7 +970,7 @@ footer {
 .add-new #difficulty-select input {
   display: none;
 }
-#comments-form h2 {
+#comments-form h3 {
   font-family: 'MuseoSans100';
   font-size: 2.2em;
   color: #EEE;
@@ -998,6 +998,9 @@ footer {
   border-left: none;
   border-bottom: none;
   border-right: none;
+}
+#comments-form .btn.primary:hover {
+  cursor: pointer;
 }
 .auth {
   float: right;
