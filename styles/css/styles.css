@@ -970,6 +970,17 @@ footer {
 .add-new #difficulty-select input {
   display: none;
 }
+#comment_body {
+  width: 720px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+}
 .auth {
   float: right;
   list-style-type: none;
