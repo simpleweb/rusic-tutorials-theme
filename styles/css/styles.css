@@ -1238,3 +1238,17 @@ footer {
 textarea:focus, input:focus {
   outline: none;
 }
+#comments .alert-message.tip {
+  bottom: 0;
+  top: auto;
+  left: 0;
+  right: auto;
+}
+#comments .alert-message.tip i {
+  display: none;
+}
+#comments .auth {
+  position: absolute;
+  left: 285px;
+  bottom: 0;
+}
