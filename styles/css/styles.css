@@ -502,6 +502,7 @@ footer {
   position: relative;
   clear: left;
   font-size: .9em;
+  margin-top: -8px;
 }
 .meta div {
   margin: 3px 20px 0 0;
