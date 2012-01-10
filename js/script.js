@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-	// Fade in login prompt
-	$('#user-block .alert-message.tip').hide().delay(1000).fadeIn('slow');
 	// Fade out alert messages
 	$('.flash.alert-message').delay(2000).fadeOut('slow');
+	// Fade in login prompt
+	$('#user-block .alert-message.tip').hide().delay(1000).fadeIn('slow');
 
 	// Masonry stack magic
 	var $container = $('#recipes-list');
