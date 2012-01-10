@@ -386,6 +386,11 @@ header {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
   font-size: 1.2em;
 }
+.btn.disabled {
+  background: #999999;
+  color: #CCCCCC;
+  opacity: .5;
+}
 /* Homepage styles */
 #intro {
   margin-bottom: 40px;
@@ -971,6 +976,11 @@ footer {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
   font-size: 1.2em;
 }
+.add-new #difficulty-select input[type="radio"]:checked + label.disabled {
+  background: #999999;
+  color: #CCCCCC;
+  opacity: .5;
+}
 .add-new #difficulty-select input {
   display: none;
 }
@@ -1255,9 +1265,4 @@ textarea:focus, input:focus {
   position: absolute;
   left: 285px;
   bottom: 0;
-}
-.disabled {
-  background: #999999;
-  color: #CCCCCC;
-  opacity: .5;
 }
