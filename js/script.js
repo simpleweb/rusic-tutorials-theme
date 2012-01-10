@@ -4,12 +4,6 @@ $(document).ready(function(){
 	$('#user-block .alert-message.tip').hide().delay(1000).fadeIn('slow');
 	// Fade out alert messages
 	$('.flash.alert-message').delay(2000).fadeOut('slow');
-	// Comments form
-	$("#comments-form").hide();
-    $(".btn.add-comment").show();
-    $('.btn.add-comment').click(function(){
-    $("#comments-form").delay(200).slideToggle();
-    });
 
 	// Masonry stack magic
 	var $container = $('#recipes-list');
