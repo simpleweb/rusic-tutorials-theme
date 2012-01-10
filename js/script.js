@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+	// Fade out alert messages
+	$('.flash.alert-message').delay(2000).fadeOut('slow');
+
 	// Masonry stack magic
 	var $container = $('#recipes-list');
 	$container.imagesLoaded( function(){
