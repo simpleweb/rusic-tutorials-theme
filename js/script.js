@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+	// Fade in login prompt
+	$('#user-block .alert-message.tip').fadeIn('slow');
+
 	// Fade out alert messages
 	$('.flash.alert-message').delay(2000).fadeOut('slow');
 
