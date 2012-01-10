@@ -386,6 +386,9 @@ header {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
   font-size: 1.2em;
 }
+.btn.disabled {
+  border: 4px solid red;
+}
 /* Homepage styles */
 #intro {
   margin-bottom: 40px;
@@ -970,6 +973,9 @@ footer {
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
   font-size: 1.2em;
+}
+.add-new #difficulty-select input[type="radio"]:checked + label.disabled {
+  border: 4px solid red;
 }
 .add-new #difficulty-select input {
   display: none;
