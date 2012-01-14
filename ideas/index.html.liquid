@@ -1,0 +1,26 @@
+<div id="intro" class="span12 offset1">
+  {{space.summary}}
+</div>
+
+<div id="filter-bar">
+<!--
+      <div id="order-by">
+        Order by:
+        <a href="#" title="show recipes in date order" class="btn active">date</a>
+        <a href="#" title="show most popular recipes first" class="btn">popular</a>
+      </div>
+-->
+</div>
+
+{% if rusic.ideas != empty %}
+  <div id="recipes-list" class="block">
+
+  {% for idea in space.ideas %}
+    <div class="teaser">
+      <a href="{{idea.permalink}}" title="link to page for {{idea.title}}"><img src="{{idea.images.first.medium}}" alt="photograph for {{idea.title}}" class="main-image" /></a>
+      <div class="meta"><div class="time">{{idea.custom1}} minutes</div><div class="difficulty {{idea.custom2}}">{{idea.custom2}}</div><a href="{{idea.like_link}}" data-method="post" title="link to like this entry" class="likes">{{idea.likes}}</a></div>
+    </div>
+  {% endfor %}
+
+  <div>
+{% endif %}

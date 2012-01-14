@@ -1,0 +1,47 @@
+<div id="new" class="span11 offset2">
+  <form id="#" method="post" action="{{space.permalink}}/ideas" enctype="multipart/form-data" class="add-new">
+    <fieldset>
+
+        <div class="input">
+          <label for="idea[title]">recipe name</label>
+          <input id="title" name="idea[title]" type="text" placeholder="Recipe title" class="field">
+        </div>
+
+        <div class="input last">
+          <label>total prep &amp; cooking time</label>
+          <input id="time" name="idea[custom1]" type="text" placeholder="00" class="field">
+          <span class="minutes">minutes</span>
+        </div>
+
+        <div class="input">
+          <label>difficulty</label>
+          <div id="difficulty-select">
+            <input type="radio" name="idea[custom2]" value="easy" id="easy" checked /><label for="easy" class="easy">easy</label>
+            <input type="radio" name="idea[custom2]" value="moderate" id="moderate" /><label for="moderate" class="moderate">moderate</label>
+            <input type="radio" name="idea[custom2]" value="challenging" id="challenging" /><label for="challenging" class="challenging">challenging</label>
+          </div>
+        </div>
+
+        <div class="input photoupload last">
+          <label>photo</label>
+          <input type="file" id="idea_images_attributes_0_file" name="idea[images_attributes][0][file]" class="upload" />
+        </div>
+
+        <div class="input content1">
+          <label>ingredients</label> <span class="tip">one per line (eg. 200g Plain flour)</span>
+          <textarea id="items-list" name="idea[custom3]" placeholder="ingredients" class="list field"></textarea>
+        </div>
+
+        <div class="input last">
+          <label for="idea[content]">instructions / method</label> <span class="tip">use a new paragraph for each step</span>
+          <textarea id="content-input" name="idea[content]" placeholder="method / insructions" class="content field"></textarea>
+        </div>
+
+        <div class="input actions last">
+          <div class="checkarea"><input type="checkbox" name="idea[should_post_to_social]" value="1" checked />share to {{current_user.provider}}?</div>
+          <input type="submit" value="submit recipe" class="btn primary submit" />
+        </div>
+
+    </fieldset>
+  </form>
+</div>
