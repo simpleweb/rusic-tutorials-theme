@@ -5,14 +5,26 @@ $(document).ready(function(){
 	// Fade in login prompt
 	$('#user-block .alert-message.tip').hide().delay(1000).fadeIn('slow');
 
-	// Masonry stack magic
+
+
+	// cache container
 	var $container = $('#recipes-list');
-	$container.imagesLoaded( function(){
-	  $container.masonry({
-	  	columnWidth: 20, 
-	    itemSelector : '.teaser'
-	  });
+	// initialize isotope
+	$container.isotope({
+		layoutMode: 'masonryHorizontal',
+		columnWidth: 20, 
+		itemSelector : '.teaser'
 	});
+
+	// filter items when filter link is clicked
+	$('#filters a').click(function(){
+	var selector = $(this).attr('data-filter');
+	$container.isotope({ filter: selector });
+	return false;
+	});
+
+
+
 
 	// Add alt margins to popular widget
     $('#recipes-list .teaser').filter(function(index){
