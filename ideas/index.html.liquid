@@ -5,9 +5,9 @@
 <div id="filter-bar">
   <div id="order-by">
     Order by:
-    <a href="http://{{space.permalink}}" title="show recipes in date order" class="btn active">date</a>
-    <a href="http://{{space.permalink}}?sort=likes" title="show most popular recipes first" class="btn">popular</a>
-    {% if current_user %}<a href="http://{{space.permalink}}?filter=own" title="show my recipes" class="btn">mine</a>{% endif %}
+    <a href="/" title="show recipes in date order" class="btn active">date</a>
+    <a href="?sort=likes" title="show most popular recipes first" class="btn">popular</a>
+    {% if current_user %}<a href="?filter=own" title="show my recipes" class="btn">mine</a>{% endif %}
   </div>
 </div>
 
