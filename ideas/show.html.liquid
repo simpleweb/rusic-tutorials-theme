@@ -4,7 +4,12 @@
 
           <div id="actions">
             <a href="#comments" title="link to comments for this entry" class="comments">{{idea.comments_count}}</a>
-            <a href="{{idea.like_link}}" data-method="post" title="link to like this entry" class="likes">{{idea.likes}}</a>
+
+            {% if idea.liked? %}
+            <span class="liked">{{idea.likes}}</span>
+            {% else %}
+            <a class="likes" title="link to like this entry" href="{{idea.like_link}}" data-method="post" data-remote="true">{{idea.likes}}</a>
+            {% endif %}
 
             <div id="share-button">
               <a href="http://twitter.com/home/?status={{space.title}} - {{idea.title}}: {{space.permalink}}/{{idea.permalink}}" target="_blank" title="share on Twitter" class="share twitter"><i></i>share on Twitter</a>

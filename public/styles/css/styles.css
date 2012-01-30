@@ -583,6 +583,21 @@ footer {
 #actions a {
   margin: 0 0 0 5px;
 }
+#actions .liked {
+  width: 50px;
+  display: block;
+  float: right;
+  position: relative;
+  padding: 34px 0 3px 0;
+  text-align: center;
+  -webkit-transition: background 0.2s ease-in;
+  -o-transition: background 0.2s ease-in;
+  background: url(/img/icon-likes-large-active.png) center 9px no-repeat #a82d45;
+  color: #eeeeee;
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
 #actions .likes {
   width: 50px;
   display: block;

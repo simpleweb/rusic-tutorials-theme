@@ -5,17 +5,9 @@
 <div id="filter-bar">
   <div id="order-by">
     Order by:
-    <a href="#" title="show recipes in date order" class="btn active">date</a>
-    <a href="#" title="show most popular recipes first" class="btn">popular</a>
-    <a href="#" title="show my recipes" class="btn">mine</a>
-  </div>
-
-  <div id="order-by">
-    Difficulty:
-    <a href="#" title="show recipes in date order" class="btn active" data-filter="*">all</a>
-    <a href="#" title="show recipes in date order" class="btn" data-filter=".easy">easy</a>
-    <a href="#" title="show most popular recipes first" class="btn" data-filter=".moderate">moderate</a>
-    <a href="#" title="show my recipes" class="btn" data-filter=".challenging">challenging</a>
+    <a href="{{space.permalink}}" title="show recipes in date order" class="btn active">date</a>
+    <a href="{{space.permalink}}?sort=likes" title="show most popular recipes first" class="btn">popular</a>
+    {% if current_user %}<a href="{{space.permalink}}?filter=own" title="show my recipes" class="btn">mine</a>{% endif %}
   </div>
 </div>
 
