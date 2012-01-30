@@ -15,4 +15,21 @@ $(document).ready(function(){
 	});
 	});
 
+	function attachLiking() {
+    
+    $('a.likes', 'div.meta, #actions').on('click', function() {
+
+        var likeLink = $(this);
+
+        $.post(likeLink.attr('href'), function(data) {
+          $('body').append('<div class="alert-message success prompt">Thanks for liking the picture!</div>');
+          likeLink.replaceWith('<span class="liked">' + (parseInt(likeLink.html())+1) + '</span>');
+          removeAlerts();
+        });
+
+        return false;
+    });
+    
+}
+
 });
