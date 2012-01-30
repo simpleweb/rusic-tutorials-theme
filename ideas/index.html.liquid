@@ -12,9 +12,10 @@
 
   <div id="order-by">
     Difficulty:
-    <a href="#" title="show recipes in date order" class="btn active">easy</a>
-    <a href="#" title="show most popular recipes first" class="btn">moderate</a>
-    <a href="#" title="show my recipes" class="btn">challenging</a>
+    <a href="#" title="show recipes in date order" class="btn active" data-filter="*">all</a>
+    <a href="#" title="show recipes in date order" class="btn" data-filter=".easy">easy</a>
+    <a href="#" title="show most popular recipes first" class="btn" data-filter=".moderate">moderate</a>
+    <a href="#" title="show my recipes" class="btn" data-filter=".challenging">challenging</a>
   </div>
 </div>
 
@@ -23,7 +24,7 @@
 
   {% for idea in space.ideas %}
     <div class="teaser">
-      <a href="{{idea.permalink}}" title="link to page for {{idea.title}}"><img src="{{idea.images.first.medium}}" alt="photograph for {{idea.title}}" class="main-image" /></a>
+      <a href="{{idea.permalink}}" title="link to page for {{idea.title}}"><img src="{{idea.images.first.medium}}" alt="photograph for {{idea.title}}" class="main-image {{idea.custom2}}" /></a>
       <div class="meta">
         <div class="time">{{idea.custom1}} minutes</div>
         <div class="difficulty {{idea.custom2}}">{{idea.custom2}}</div>

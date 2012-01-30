@@ -412,7 +412,7 @@ header {
   margin: 0 0 0 2px;
 }
 #recipes-list {
-  width: 1000px;
+  width: 1020px;
   float: left;
   position: relative;
   clear: left;
@@ -450,9 +450,6 @@ header {
 }
 #recipes-list.block .teaser:hover {
   background: #b77b26;
-}
-#recipes-list.block .teaser.last {
-  margin: 0 0 20px 0;
 }
 #recipes-list.block .teaser img {
   width: 312px;
@@ -534,7 +531,25 @@ footer {
   background: url(/img/icon-difficulty.png) 0 3px no-repeat;
 }
 .meta .liked {
-  background: red;
+  display: block;
+  float: right;
+  position: relative;
+  padding: 3px 10px 1px 28px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.18);
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  color: #808080;
+  -webkit-transition: background 0.2s ease-in;
+  -o-transition: background 0.2s ease-in;
+  background: url(/img/icon-likes-small-active.png) 10px 7px no-repeat #a82d45;
+  color: #eeeeee;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 .meta .likes {
   display: block;
@@ -1274,4 +1289,24 @@ textarea:focus, input:focus {
   right: -150px;
   top: -40px;
   padding: 5px 12px;
+}
+.isotope, .isotope .isotope-item {
+  /* change duration value to whatever you like */
+
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: top, left, opacity;
+  transition-property: transform, opacity;
 }

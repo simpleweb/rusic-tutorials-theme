@@ -58,7 +58,7 @@ header { margin: 0 0 40px 0; }
 #filter-bar { width: 100%; float: left; position: relative; clear: left; padding: 1px 0 0 0; background: url(/img/filterbar-bg.png) top center no-repeat; 
     .btn { margin: 0 0 0 2px; }}
 
-#recipes-list { width: 1000px; float: left; position: relative; clear: left; margin-top: 30px;
+#recipes-list { width: 1020px; float: left; position: relative; clear: left; margin-top: 30px;
 	&.block {
 
 		// Meta block
@@ -67,7 +67,6 @@ header { margin: 0 0 40px 0; }
 		// Block view
 		.teaser { float: left; position: relative; display: block; .span5; margin: 0 20px 20px 0; background: @darkColor; .box-shadow(0 0 4px rgba(000,000,000,.7)); border-top: 1px solid rgba(255,255,255,.3); .border-radius; -webkit-transition: background .2s ease-in; -o-transition: background .2s ease-in;
 			&:hover { background: @baseColor; }
-			&.last { margin: 0 0 20px 0; }
 			img { width: 312px; float: left; position: relative; margin: 4px 4px 0 4px; }}} 
 }
 
@@ -99,7 +98,7 @@ footer {width: 300px; float: left; position: relative; clear: left;}
     .author { float: left; position: relative; padding: 0; }
     .time { float: left; position: relative; background: url(/img/icon-time.png) 0 2px no-repeat; }
     .difficulty { float: left; position: relative; background: url(/img/icon-difficulty.png) 0 3px no-repeat; }
-    .liked { background: red; }
+    .liked { display: block; float: right; position: relative; padding: 3px 10px 1px 28px; .border-radius; .box-shadow(inset 0 0 12px rgba(000,000,000,.18)); border-bottom: 1px solid rgba(000,000,000,.2); color: lighten(@darkColor, 10%); -webkit-transition: background .2s ease-in; -o-transition: background .2s ease-in; background: url(/img/icon-likes-small-active.png) 10px 7px no-repeat @red; color: @white; .box-shadow(inset 0 0 6px rgba(000,000,000,.5)); }
     .likes { display: block; float: right; position: relative; padding: 3px 10px 1px 28px; background: url(/img/icon-likes-small.png) 10px 7px no-repeat #F4F4F4; .border-radius; .box-shadow(inset 0 0 12px rgba(000,000,000,.18)); border-bottom: 1px solid rgba(000,000,000,.2); color: lighten(@darkColor, 10%); -webkit-transition: background .2s ease-in; -o-transition: background .2s ease-in;
         &:hover { background: url(/img/icon-likes-small-active.png) 10px 7px no-repeat @red; color: @white; .box-shadow(inset 0 0 6px rgba(000,000,000,.5)); }}}
 
@@ -301,3 +300,26 @@ textarea:focus, input:focus{ outline: none; }
 }
 
 
+
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
