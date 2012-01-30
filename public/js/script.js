@@ -15,11 +15,4 @@ $(document).ready(function(){
 	});
 	});
 
-	// filter items when filter link is clicked
-	$('#order-by a').click(function(){
-	var selector = $(this).attr('data-filter');
-	$container.isotope({ filter: selector });
-	return false;
-	});
-
 });
