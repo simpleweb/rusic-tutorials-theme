@@ -533,6 +533,9 @@ footer {
   position: relative;
   background: url(/img/icon-difficulty.png) 0 3px no-repeat;
 }
+.meta .liked {
+  background: red;
+}
 .meta .likes {
   display: block;
   float: right;

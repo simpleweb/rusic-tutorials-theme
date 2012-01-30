@@ -24,7 +24,18 @@
   {% for idea in space.ideas %}
     <div class="teaser">
       <a href="{{idea.permalink}}" title="link to page for {{idea.title}}"><img src="{{idea.images.first.medium}}" alt="photograph for {{idea.title}}" class="main-image" /></a>
-      <div class="meta"><div class="time">{{idea.custom1}} minutes</div><div class="difficulty {{idea.custom2}}">{{idea.custom2}}</div><a href="{{idea.like_link}}" data-method="post" title="link to like this entry" class="likes">{{idea.likes}}</a></div>
+      <div class="meta">
+        <div class="time">{{idea.custom1}} minutes</div>
+        <div class="difficulty {{idea.custom2}}">{{idea.custom2}}</div>
+
+        {% if idea.liked? %}
+          <span class="liked">{{idea.likes}}</span>
+        {% else %}
+          <a class="likes" title="link to like this entry" href="{{idea.like_link}}" data-method="post" data-remote="true">{{idea.likes}}</a>
+        {% endif %}
+
+
+      </div>
     </div>
   {% endfor %}
 
