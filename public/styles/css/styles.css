@@ -932,7 +932,7 @@ footer {
 }
 .add-new .minutes {
   position: absolute;
-  bottom: 14px;
+  top: 34px;
   right: 18px;
   color: #BBBBBB;
 }
@@ -1322,4 +1322,15 @@ textarea:focus, input:focus {
   -moz-transition-property: -moz-transform, opacity;
   -o-transition-property: top, left, opacity;
   transition-property: transform, opacity;
+}
+#new-entry label.error {
+  float: left;
+  position: relative;
+  clear: left;
+  margin: 6px 0 0 0;
+  padding: 0 0 3px 0;
+  font-size: .9em;
+  padding-left: 20px;
+  color: #b77b26;
+  background: url(/img/icon-formerror.png) 0 0 no-repeat;
 }

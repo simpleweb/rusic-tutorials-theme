@@ -177,7 +177,7 @@ footer {width: 300px; float: left; position: relative; clear: left;}
     #items-list { width: 200px; }
     #content-input { width: 415px; }
     .upload { float: left; position: relative; clear: left; margin: 17px 0 0 0; }
-    .minutes { position: absolute; bottom: 14px; right: 18px; color: #BBBBBB; }
+    .minutes { position: absolute; top: 34px; right: 18px; color: #BBBBBB; }
 
     #difficulty-select { float: left; position: relative; clear: left; margin-right: 20px;
         label { margin: 10px 7px 0 0; padding: 9px 12px 11px 32px; font-size: .9em; border-top: 1px solid transparent;
@@ -327,4 +327,16 @@ textarea:focus, input:focus{ outline: none; }
      -moz-transition-property:    -moz-transform, opacity;
        -o-transition-property:         top, left, opacity;
           transition-property:         transform, opacity;
+}
+
+#new-entry label.error {
+  float: left;
+  position: relative;
+  clear: left;
+  margin: 6px 0 0 0;
+  padding: 0 0 3px 0;
+  font-size: .9em;
+  padding-left: 20px;
+  color: @baseColor;
+  background: url(/img/icon-formerror.png) 0 0 no-repeat;
 }
