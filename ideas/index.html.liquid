@@ -3,6 +3,7 @@
 </div>
 
 <div id="filter-bar">
+  <a href="{{space.permalink}}.atom" title="feed for {{space.title}}" class="feed">subscribe to rss</a>
   <div id="order-by">
     Order by:
     <a href="{{space.permalink}}" title="show recipes in date order" class="btn {% if filter == "own" %}{% else %}{% if sort == "likes" %}{% else %}active{% endif %}{% endif %}">date</a>
