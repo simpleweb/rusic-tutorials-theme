@@ -8,7 +8,7 @@
             {% if idea.liked? %}
             <span class="liked">{{idea.likes}}</span>
             {% else %}
-            <a class="likes" title="link to like this entry" href="{{idea.like_link}}" data-method="post" data-remote="true">{{idea.likes}}</a>
+            <div class="likes" the_link="{{idea.like_link}}"><span class="likecount">{{idea.likes}}</span></div>
             {% endif %}
 
             <div id="share-button">

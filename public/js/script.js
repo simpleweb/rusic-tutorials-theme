@@ -15,21 +15,23 @@ $(document).ready(function(){
 	});
 	});
 
-	function attachLiking() {
-    
-    $('a.likes', 'div.meta, #actions').on('click', function() {
+    // AJAXIFY LIKE BUTTONS
+    $('.likes').click(function(){
+	    var button = this;
 
-        var likeLink = $(this);
+	    $(this).addClass('disabled');
 
-        $.post(likeLink.attr('href'), function(data) {
-          $('body').append('<div class="alert-message success prompt">Thanks for liking the picture!</div>');
-          likeLink.replaceWith('<span class="liked">' + (parseInt(likeLink.html())+1) + '</span>');
-          removeAlerts();
-        });
-
-        return false;
-    });
-    
-}
+	    $.post($(this).attr('the_link'), function(data) {
+	      if(data.valid){
+	        $(button).find(".likecount").html(''+data.likes_count+'');
+	        $(button).removeClass('disabled');
+	        $(button).removeClass('likes');
+	        $(button).addClass('liked');
+	      }else{
+	        alert(data.message);
+	        $(button).removeClass('disabled');
+	      }
+	    }, 'json');
+  	});
 
 });

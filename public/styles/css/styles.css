@@ -534,6 +534,7 @@ footer {
   display: block;
   float: right;
   position: relative;
+  margin: 0;
   padding: 3px 10px 1px 28px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -550,6 +551,7 @@ footer {
   display: block;
   float: right;
   position: relative;
+  margin: 0;
   padding: 3px 10px 1px 28px;
   background: url(/img/icon-likes-small.png) 10px 7px no-repeat #f4f4f4;
   -webkit-border-radius: 4px;
@@ -569,6 +571,7 @@ footer {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 #actions {
   float: right;
@@ -601,6 +604,7 @@ footer {
   display: block;
   float: right;
   position: relative;
+  margin: 0 0 0 5px;
   padding: 34px 0 3px 0;
   background: url(/img/icon-likes-large.png) center 9px no-repeat rgba(102, 102, 102, 0.4);
   -webkit-border-radius: 4px;
@@ -621,6 +625,7 @@ footer {
   -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 #actions .comments {
   width: 50px;
