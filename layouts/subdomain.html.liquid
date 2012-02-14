@@ -56,7 +56,7 @@
         {% endif %}
 
         <a href="{{space.permalink}}" title="{{space.title}}"><img src="http://rusic-tutorials-theme.s3.amazonaws.com/img/logo.png" alt="Best Recipes Logo" class="logo" /></a>
-        <h1>{{space.title}}</h1>
+        <h1><a href="{{space.permalink}}" title="link to {{space.title}}">{{space.title}}</a></h1>
         
         <div id="user-block">
           {% if current_user %}

@@ -159,4 +159,4 @@ textarea:focus,input:focus{outline:none;}
 .isotope .isotope-item{-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform,opacity;-o-transition-property:top, left, opacity;transition-property:transform, opacity;}
 #new-entry label.error{float:left;position:relative;clear:left;margin:6px 0 0 0;padding:0 0 3px 0;font-size:.9em;padding-left:20px;color:#b77b26;background:url(/img/icon-formerror.png) 0 0 no-repeat;}
 a.feed{float:left;position:relative;display:block;height:19px;margin:20px 0 0 0;padding:0 0 0 24px;background:url(/img/icon-feed.png) 0 0 no-repeat;color:#bbbbbb;}a.feed:hover{background:url(/img/icon-feed.png) 0 -19px no-repeat;color:#b77b26;}
-#top-bar h1{float:left;position:relative;margin:-1px 0 0 10px;padding:0;font-weight:bold;text-transform:uppercase;max-width:500px;font-size:2.6em;color:#b77b26;text-shadow:none;}
+#top-bar h1{float:left;position:relative;margin:-1px 0 0 10px;padding:0;font-weight:bold;text-transform:uppercase;max-width:500px;font-size:2.6em;color:#b77b26;text-shadow:none;}#top-bar h1 a{color:#b77b26;}
