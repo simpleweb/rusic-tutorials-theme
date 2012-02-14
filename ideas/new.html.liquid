@@ -4,7 +4,7 @@
     <fieldset>
 
         <div class="input">
-          <label for="idea[title]">recipe name</label>
+          <label for="idea[title]">{{ theme.idea_context }} name</label>
           <input id="title" name="idea[title]" type="text" placeholder="Recipe title" class="field required">
         </div>
 
@@ -47,7 +47,7 @@
   </form>
   {% else %}
   <div id="intro" class="span12 offset1">
-    you need to login to add a recipe!
+    you need to login to add a {{ theme.idea_context }}!
   </div>
   {% endif %}
 </div>

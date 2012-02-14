@@ -69,16 +69,16 @@
             <li class="facebook"><a href="/auth/facebook" class="button"><span></span>Facebook</a></li>
           </ul>
           <div class="alert-message tip">
-              <i></i><p>login with twitter or facebook to add new or like recipes</p>
+              <i></i><p>login with twitter or facebook to add new or {{ theme.like_context }} {{ theme.ideas_context }}</p>
           </div>
           {% endif %}
         </div>
       </div>
 
       {% if current_user %}
-      <a href="{{space.permalink}}/ideas/new" title="Link to add a new recipe" class="btn add">Add Recipe</a>
+      <a href="{{space.permalink}}/ideas/new" title="Link to add a new recipe" class="btn add">Add {{ theme.idea_context | capitalize }}</a>
       {% else %}
-      <span class="btn add disabled">Add Recipe</span>
+      <span class="btn add disabled">Add {{ theme.idea_context | capitalize }}</span>
       {% endif %}
 
     </header>
