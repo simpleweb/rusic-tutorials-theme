@@ -1,3 +1,9 @@
+{% if env == "development" %}
+  {% assign asset_url="http://rusic-tutorials-assets" %}
+{% else %}
+  {% assign asset_url="https://s3.amazonaws.com/rusic-tutorials-theme" %}
+{% endif %}
+
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -21,17 +27,17 @@
   <meta name="viewport" content="width=1100,initial-scale=1">
 
   <!-- Do Less -->
-  <link rel="stylesheet" type="text/css" href="http://rusic-tutorials-theme.s3.amazonaws.com/styles/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset_url }}/styles/css/styles.css">
 
   <!-- Modernize -->
-  <script src="http://rusic-tutorials-theme.s3.amazonaws.com/js/libs/modernizr-2.0.6.min.js"></script>
+  <script src="{{ asset_url }}/js/libs/modernizr-2.0.6.min.js"></script>
 
   <!-- Rusic Stuff -->
   {{ content_for_header }}
 
 </head>
 
-<body>
+<body class="{% unless current_user %}logged-out{% endunless %}">
 
   <div id="container">
 
@@ -89,17 +95,18 @@
       {{yield}}
     </div>
 
-    <footer>
-    </footer>
-
   </div> <!--! end of #container -->
+  
+  <footer>
+    {{space.title}} is powered by <a href="http://rusic.com" title="link to Rusic">Rusic</a>
+  </footer>
 
   <!-- scripts -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script defer src="http://rusic-tutorials-theme.s3.amazonaws.com/js/plugins.js"></script>
-  <script src="http://rusic-tutorials-theme.s3.amazonaws.com/js/jquery.isotope.min.js"></script>
-  <script defer src="http://rusic-tutorials-theme.s3.amazonaws.com/js/jquery.validate.min.js"></script>
-  <script defer src="http://rusic-tutorials-theme.s3.amazonaws.com/js/script.js"></script>
+  <script defer src="{{ asset_url }}/js/plugins.js"></script>
+  <script src="{{ asset_url }}/js/jquery.isotope.min.js"></script>
+  <script defer src="{{ asset_url }}/js/jquery.validate.min.js"></script>
+  <script defer src="{{ asset_url }}/js/script.js"></script>
   <!-- end scripts-->
 
   <!--[if lt IE 7 ]>

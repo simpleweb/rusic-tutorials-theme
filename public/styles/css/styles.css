@@ -67,7 +67,7 @@ header{margin:0 0 40px 0;}
 #recipes-list{width:1020px;float:left;position:relative;clear:left;margin-top:30px;}#recipes-list.block .meta{float:left;position:relative;clear:left;width:292px;margin:0 4px 4px 4px;padding:7px 10px;background:url(/img/meta-noise.gif) left bottom repeat-x #eeeeee;-webkit-box-shadow:0 -1px 1px 0 rgba(0, 0, 0, 0.2);-moz-box-shadow:0 -1px 1px 0 rgba(0, 0, 0, 0.2);box-shadow:0 -1px 1px 0 rgba(0, 0, 0, 0.2);color:#808080;}
 #recipes-list.block .teaser{float:left;position:relative;display:block;width:320px;margin:0 20px 20px 0;background:#666666;-webkit-box-shadow:0 0 4px rgba(0, 0, 0, 0.7);-moz-box-shadow:0 0 4px rgba(0, 0, 0, 0.7);box-shadow:0 0 4px rgba(0, 0, 0, 0.7);border-top:1px solid rgba(255, 255, 255, 0.3);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-transition:background 0.2s ease-in;-o-transition:background 0.2s ease-in;}#recipes-list.block .teaser:hover{background:#b77b26;}
 #recipes-list.block .teaser img{width:312px;float:left;position:relative;margin:4px 4px 0 4px;}
-footer{width:300px;float:left;position:relative;clear:left;}
+footer{width:100%;float:left;position:relative;clear:left;margin:20px 0 0 0;padding:25px 0;background:url(/img/filterbar-bg.png) top center no-repeat;text-align:center;}
 #order-by{float:right;position:relative;padding:18px 25px 12px 25px;background:url(/img/filter-divider.png) top left repeat-y;}
 .avatar{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
 #user-block{text-align:right;}#user-block #logged-in{margin:0 50px 0 0;line-height:1.2em;}
@@ -160,3 +160,6 @@ textarea:focus,input:focus{outline:none;}
 #new-entry label.error{float:left;position:relative;clear:left;margin:6px 0 0 0;padding:0 0 3px 0;font-size:.9em;padding-left:20px;color:#b77b26;background:url(/img/icon-formerror.png) 0 0 no-repeat;}
 a.feed{float:left;position:relative;display:block;height:19px;margin:20px 0 0 0;padding:0 0 0 24px;background:url(/img/icon-feed.png) 0 0 no-repeat;color:#bbbbbb;}a.feed:hover{background:url(/img/icon-feed.png) 0 -19px no-repeat;color:#b77b26;}
 #top-bar h1{float:left;position:relative;margin:-1px 0 0 10px;padding:0;font-weight:bold;text-transform:uppercase;max-width:500px;font-size:2.6em;color:#b77b26;text-shadow:none;}#top-bar h1 a{color:#b77b26;}
+.empty{float:left;position:relative;clear:left;width:100%;text-align:center;margin:50px 0;}.empty h1{font-size:26px;}
+.logged-out .likes:hover{background:url(/img/icon-likes-small.png) 10px 7px no-repeat #f4f4f4;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;-webkit-box-shadow:inset 0 0 12px rgba(0, 0, 0, 0.18);-moz-box-shadow:inset 0 0 12px rgba(0, 0, 0, 0.18);box-shadow:inset 0 0 12px rgba(0, 0, 0, 0.18);color:#666666;cursor:default;}
+.logged-out #actions .likes:hover{background:url(/img/icon-likes-large.png) center 9px no-repeat rgba(102, 102, 102, 0.4);-webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.4);-moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.4);box-shadow:0 0 2px rgba(0, 0, 0, 0.4);color:#bbbbbb;cursor:default;}

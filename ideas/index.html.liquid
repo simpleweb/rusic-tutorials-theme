@@ -12,7 +12,7 @@
   </div>
 </div>
 
-{% if rusic.ideas != empty %}
+{% if space.ideas != empty %}
   <div id="recipes-list" class="block">
 
   {% for idea in space.ideas %}
@@ -29,6 +29,20 @@
       </div>
     </div>
   {% endfor %}
+  
 
   <div>
+{% else %}
+
+<div class="empty">
+  <h1>Uhoh, it doesn't look like there are any {{ theme.ideas_context }} to show you!</h1>
+  {% if current_user %}
+  <p>Add a {{theme.idea_context}} by using the 'Add {{theme.idea_context}}' button.</p>
+  {% else %}
+  <p>Login with Twitter or Facebook to be the first to add a {{theme.idea_context}}.</p>
+  {% endif %}
+</div>
+  
 {% endif %}
+
+

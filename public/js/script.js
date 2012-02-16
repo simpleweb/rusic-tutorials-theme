@@ -33,5 +33,8 @@ $(document).ready(function(){
 	      }
 	    }, 'json');
   	});
+  	
+  	// FORMS VALIDATION
+  	$("#entry_form").validate();
 
 });
