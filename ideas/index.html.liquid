@@ -3,33 +3,35 @@
 </div>
 
 <div id="filter-bar">
+  
   <a href="{{space.permalink}}.atom" title="feed for {{space.title}}" class="feed">subscribe to rss</a>
+  
   <div id="order-by">
     Order by:
     <a href="{{space.permalink}}" title="show recipes in date order" class="btn {% if filter == "own" %}{% else %}{% if sort == "likes" %}{% else %}active{% endif %}{% endif %}">date</a>
     <a href="{{space.permalink}}?sort=likes" title="show most popular recipes first" class="btn {% if sort == "likes" %}active{% endif %}">popular</a>
-    {% if current_user %}<a href="{{space.permalink}}?filter=own" title="show my recipes" class="btn {% if filter == "own" %}active{% endif %}">mine</a>{% endif %}
+{% if current_user %}<a href="{{space.permalink}}?filter=own" title="show my recipes" class="btn {% if filter == "own" %}active{% endif %}">mine</a>{% endif %}
   </div>
+  
 </div>
 
 {% if space.ideas != empty %}
   <div id="recipes-list" class="block">
 
-  {% for idea in space.ideas %}
+    {% for idea in space.ideas %}
     <div class="teaser">
       <a href="{{idea.permalink}}" title="link to page for {{idea.title}}"><img src="{{idea.images.first.medium}}" alt="photograph for {{idea.title}}" class="main-image {{idea.custom2}}" /></a>
       <div class="meta">
         <div class="time">{{idea.custom1}} minutes</div>
         <div class="difficulty {{idea.custom2}}">{{idea.custom2}}</div>
         {% if idea.liked? %}
-          <span class="liked">{{idea.likes}}</span>
+        <span class="liked">{{idea.likes}}</span>
         {% else %}
-          <div class="likes" the_link="{{idea.like_link}}"><span class="likecount">{{idea.likes}}</span></div>
+        <div class="likes" the_link="{{idea.like_link}}"><span class="likecount">{{idea.likes}}</span></div>
         {% endif %}
       </div>
     </div>
-  {% endfor %}
-  
+    {% endfor %}
 
   <div>
 {% else %}
@@ -42,7 +44,7 @@
   <p>Login with Twitter or Facebook to be the first to add a {{theme.idea_context}}.</p>
   {% endif %}
 </div>
-  
+
 {% endif %}
 
 

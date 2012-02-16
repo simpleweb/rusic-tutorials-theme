@@ -1,57 +1,68 @@
+<!-- Editing title -->
 <div id="intro" class="span11 offset2">
-  Editing: {{idea.title}}
+	Editing: {{idea.title}}
 </div>
 
 <div id="new" class="span11 offset2">
-  {% if current_user %}
-  <form id="new-entry" method="post" action="{{idea.permalink}}" class="add-new" enctype="multipart/form-data">
-  <input type="hidden" name="_method" value="put" />
-	<fieldset>
-
-		<div class="input">
-		  <label for="idea[title]">{{ theme.idea_context }} name</label>
-		  <input id="title" name="idea[title]" type="text" value="{{ idea.title }}" class="field required">
-		</div>
-
-		<div class="input last">
-		  <label>total prep &amp; cooking time</label>
-		  <input id="time" name="idea[custom1]" type="text" value="{{idea.custom1}}" class="field required">
-		  <span class="minutes">minutes</span>
-		</div>
-
-		<div class="input">
-		  <label>difficulty</label>
-		  <div id="difficulty-select">
-			<input type="radio" name="idea[custom2]" value="easy" id="easy" checked /><label for="easy" class="easy">easy</label>
-			<input type="radio" name="idea[custom2]" value="moderate" id="moderate" /><label for="moderate" class="moderate">moderate</label>
-			<input type="radio" name="idea[custom2]" value="challenging" id="challenging" /><label for="challenging" class="challenging">challenging</label>
-		  </div>
-		</div>
-
-		<div class="input photoupload last">
-		  <label>change photo</label>
-		  <input type="file" id="idea_images_attributes_0_file" name="idea[images_attributes][0][file]" class="upload required" />
-		</div>
-
-		<div class="input content1">
-		  <label>ingredients</label> <span class="tip">one per line (eg. 200g Plain flour)</span>
-		  <textarea id="items-list" name="idea[custom3]" placeholder="ingredients" class="list field required">{{idea.custom3}}</textarea>
-		</div>
-
-		<div class="input last">
-		  <label for="idea[content]">instructions / method</label> <span class="tip">use a new paragraph for each step</span>
-		  <textarea id="content-input" name="idea[content]" placeholder="method / insructions" class="content field required">{{idea.content}}</textarea>
-		</div>
-
-		<div class="input actions last">
-		  <input type="submit" value="update {{ theme.idea_context }}" class="btn primary submit" />
-		</div>
-
-	</fieldset>
-  </form>
-  {% else %}
-  <div id="intro" class="span12 offset1">
+	{% if current_user %}
+	<!-- Edit entry form -->
+	<form id="new-entry" method="post" action="{{idea.permalink}}" class="add-new" enctype="multipart/form-data">
+		<input type="hidden" name="_method" value="put" />
+		
+		<fieldset>
+			
+			<!-- Entry title -->
+			<div class="input">
+				<label for="idea[title]">{{ theme.idea_context }} name</label>
+				<input id="title" name="idea[title]" type="text" value="{{ idea.title }}" class="field required">
+			</div>
+			
+			<!-- Custom field 1 (prep time) -->
+			<div class="input last">
+				<label>total prep &amp; cooking time</label>
+				<input id="time" name="idea[custom1]" type="text" value="{{idea.custom1}}" class="field required">
+				<span class="minutes">minutes</span>
+			</div>
+			
+			<!-- Custom field 2 (difficulty) -->
+			<div class="input">
+				<label>difficulty</label>
+				<div id="difficulty-select">
+					<input type="radio" name="idea[custom2]" value="easy" id="easy" checked /><label for="easy" class="easy">easy</label>
+					<input type="radio" name="idea[custom2]" value="moderate" id="moderate" /><label for="moderate" class="moderate">moderate</label>
+					<input type="radio" name="idea[custom2]" value="challenging" id="challenging" /><label for="challenging" class="challenging">challenging</label>
+				</div>
+			</div>
+			
+			<!-- Image upload -->
+			<div class="input photoupload last">
+				<label>change photo</label>
+				<input type="file" id="idea_images_attributes_0_file" name="idea[images_attributes][0][file]" class="upload required" />
+			</div>
+			
+			<!-- Custom field 3 (ingredients list) -->
+			<div class="input content1">
+				<label>ingredients</label> <span class="tip">one per line (eg. 200g Plain flour)</span>
+				<textarea id="items-list" name="idea[custom3]" placeholder="ingredients" class="list field required">{{idea.custom3}}</textarea>
+			</div>
+			
+			<!-- Main content -->
+			<div class="input last">
+				<label for="idea[content]">instructions / method</label> <span class="tip">use a new paragraph for each step</span>
+				<textarea id="content-input" name="idea[content]" placeholder="method / insructions" class="content field required">{{idea.content}}</textarea>
+			</div>
+			
+			<!-- Submit -->
+			<div class="input actions last">
+				<input type="submit" value="update {{ theme.idea_context }}" class="btn primary submit" />
+			</div>
+		
+		</fieldset>
+		
+	</form>
+	{% else %}
+	<div id="intro" class="span12 offset1">
 	you need to login to add a {{ theme.idea_context }}!
-  </div>
-  {% endif %}
+	</div>
+	{% endif %}
 </div>

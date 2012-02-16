@@ -1,135 +1,134 @@
 {% if env == "development" %}
-  {% assign asset_url="http://rusic-tutorials-assets" %}
+{% assign asset_url="http://rusic-tutorials-assets" %}
 {% else %}
-  {% assign asset_url="https://s3.amazonaws.com/rusic-tutorials-theme" %}
+{% assign asset_url="https://s3.amazonaws.com/rusic-tutorials-theme" %}
 {% endif %}
-
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+  <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+  <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
   
-  {% if idea %}
-  <meta property="og:title" content="{{ idea.title }}"/>
-  <meta property="og:type" content="article"/>
-  <meta property="og:url" content="{{ idea.permalink }}"/>
-  <meta property="og:image" content="{{idea.images.first.square}}"/>
-  <meta property="og:site_name" content="{{ space.title }}"/>
-  <meta property="og:description" content="{{ idea.content }}" />
-  {% else %}
-  <meta property="og:title" content="{{space.title}}"/>
-  <meta property="og:type" content="article"/>
-  <meta property="og:url" content="{{ space.permalink }}"/>
-  <meta property="og:image" content="{{ space.ideas.first.images.first.square}}"/>
-  <meta property="og:site_name" content="{{space.title}}"/>
-  <meta property="og:description" content="{{space.summary}}" />
-  {% endif %}
+  <head>
   
-  <title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="{{space.summary}}">
+    <meta name="author" content="{{space.title}}">
+    <meta name="viewport" content="width=1100,initial-scale=1">
+    
     {% if idea %}
-      {{idea.title}} &middot; {{space.title}}
+    <meta property="og:title" content="{{ idea.title }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ idea.permalink }}"/>
+    <meta property="og:image" content="{{idea.images.first.square}}"/>
+    <meta property="og:site_name" content="{{ space.title }}"/>
+    <meta property="og:description" content="{{ idea.content }}" />
     {% else %}
-      {{space.title}}
+    <meta property="og:title" content="{{space.title}}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ space.permalink }}"/>
+    <meta property="og:image" content="{{ space.ideas.first.images.first.square}}"/>
+    <meta property="og:site_name" content="{{space.title}}"/>
+    <meta property="og:description" content="{{space.summary}}" />
     {% endif %}
-  </title>
-
-  <!-- Mobile goodness -->
-  <meta name="viewport" content="width=1100,initial-scale=1">
-
-  <!-- Do Less -->
-  <link rel="stylesheet" type="text/css" href="{{ asset_url }}/styles/css/styles.css">
-
-  <!-- Modernize -->
-  <script src="{{ asset_url }}/js/libs/modernizr-2.0.6.min.js"></script>
-
-  <!-- Rusic Stuff -->
-  {{ content_for_header }}
-
-</head>
-
-<body class="{% unless current_user %}logged-out{% endunless %}">
-
-  <div id="container">
-
-    <header class="row">
-
-      <div id="top-bar">
-
-        {% if error %}
-        <div class="flash alert-message error">
-        {{ error }}
-        </div>
-        {% endif %}
-        {% if alert %}
-        <div class="flash alert-message warning">
-        {{ alert }}
-        </div>
-        {% endif %}
-        {% if notice %}
-        <div class="flash alert-message success prompt">
-        {{ notice }}
-        </div>
-        {% endif %}
-
-        <a href="{{space.permalink}}" title="{{space.title}}"><img src="http://rusic-tutorials-theme.s3.amazonaws.com/img/logo.png" alt="Best Recipes Logo" class="logo" /></a>
-        <h1><a href="{{space.permalink}}" title="link to {{space.title}}">{{space.title}}</a></h1>
+    
+    <title>
+    {% if idea %}
+    {{idea.title}} &middot; {{space.title}}
+    {% else %}
+    {{space.title}}
+    {% endif %}
+    </title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}/styles/css/styles.css">
+    
+    <!-- Scripts -->
+    <script src="{{ asset_url }}/js/libs/modernizr-2.0.6.min.js"></script>
+    {{ content_for_header }}
+  
+  </head>
+  
+  <body class="{% unless current_user %}logged-out{% endunless %}">
+  
+    <!-- Main container -->
+    <div id="container">
+    
+      <header class="row">
+        <div id="top-bar">
         
-        <div id="user-block">
-          {% if current_user %}
-          <div id="logged-in">
-            Hey, {{current_user.nickname}}<br/>
-            <a href="/auth/signout" title="logout" class="logout">logout</a>
-          </div>
-            <img src="{{current_user.image_url}}" alt="avatar of {{current_user.nickname}}" class="avatar" width="40" height="40" />
-            {% else %}
-            <ul class="auth">
-            <li class="twitter"><a href="/auth/twitter" class="button"><span></span>Twitter</a></li>
-            <li class="facebook"><a href="/auth/facebook" class="button"><span></span>Facebook</a></li>
-          </ul>
-          <div class="alert-message tip">
-              <i></i><p>login with twitter or facebook to add new or {{ theme.like_context }} {{ theme.ideas_context }}</p>
+          {% if error %}
+          <div class="flash alert-message error">
+            {{ error }}
           </div>
           {% endif %}
+          {% if alert %}
+          <div class="flash alert-message warning">
+            {{ alert }}
+          </div>
+          {% endif %}
+          {% if notice %}
+          <div class="flash alert-message success prompt">
+            {{ notice }}
+          </div>
+          {% endif %}
+        
+          <a href="{{space.permalink}}" title="{{space.title}}"><img src="http://rusic-tutorials-theme.s3.amazonaws.com/img/logo.png" alt="Best Recipes Logo" class="logo" /></a>
+          <h1><a href="{{space.permalink}}" title="link to {{space.title}}">{{space.title}}</a></h1>
+        
+          <div id="user-block">
+            {% if current_user %}
+            <!-- User block -->
+            <div id="logged-in">
+              Hey, {{current_user.nickname}}<br/>
+              <a href="/auth/signout" title="logout" class="logout">logout</a>
+            </div>
+            <img src="{{current_user.image_url}}" alt="avatar of {{current_user.nickname}}" class="avatar" width="40" height="40" />
+            {% else %}
+            <!--Login prompts -->
+            <ul class="auth">
+              <li class="twitter"><a href="/auth/twitter" class="button"><span></span>Twitter</a></li>
+              <li class="facebook"><a href="/auth/facebook" class="button"><span></span>Facebook</a></li>
+            </ul>
+            <div class="alert-message tip">
+              <i></i><p>login with twitter or facebook to add new or {{ theme.like_context }} {{ theme.ideas_context }}</p>
+            </div>
+            {% endif %}
+            </div>
+          </div>
+        
+          {% if current_user %}
+          <a href="{{space.permalink}}/ideas/new" title="Link to add a new recipe" class="btn add">Add {{ theme.idea_context | capitalize }}</a>
+          {% else %}
+          <span class="btn add disabled">Add {{ theme.idea_context | capitalize }}</span>
+          {% endif %}
+      
+        </header>
+      
+        <div id="main" role="main" class="row">
+            {{yield}}
         </div>
-      </div>
-
-      {% if current_user %}
-      <a href="{{space.permalink}}/ideas/new" title="Link to add a new recipe" class="btn add">Add {{ theme.idea_context | capitalize }}</a>
-      {% else %}
-      <span class="btn add disabled">Add {{ theme.idea_context | capitalize }}</span>
-      {% endif %}
-
-    </header>
-
-    <div id="main" role="main" class="row">
-      {{yield}}
-    </div>
-
-  </div> <!--! end of #container -->
-  
-  <footer>
+    
+    </div> <!--! end of #container -->
+    
+    <footer>
     {{space.title}} is powered by <a href="http://rusic.com" title="link to Rusic">Rusic</a>
-  </footer>
-
-  <!-- scripts -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script defer src="{{ asset_url }}/js/plugins.js"></script>
-  <script src="{{ asset_url }}/js/jquery.isotope.min.js"></script>
-  <script defer src="{{ asset_url }}/js/jquery.validate.min.js"></script>
-  <script defer src="{{ asset_url }}/js/script.js"></script>
-  <!-- end scripts-->
-
-  <!--[if lt IE 7 ]>
+    </footer>
+    
+    <!-- scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script defer src="{{ asset_url }}/js/plugins.js"></script>
+    <script src="{{ asset_url }}/js/jquery.isotope.min.js"></script>
+    <script defer src="{{ asset_url }}/js/jquery.validate.min.js"></script>
+    <script defer src="{{ asset_url }}/js/script.js"></script>
+    <!-- end scripts-->
+    
+    <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-
-</body>
+    <![endif]-->
+  
+  </body>
 </html>
