@@ -1,11 +1,11 @@
-<div id="new" class="span11 offset2">
+<div id="new-entry" class="span11 offset2">
   {% if current_user %}
   <form id="entry_form" method="post" action="{{space.permalink}}/ideas" class="add-new" enctype="multipart/form-data">
     <fieldset>
 
         <div class="input">
-          <label for="idea[title]">{{ theme.idea_context }} name</label>
-          <input id="title" name="idea[title]" type="text" placeholder="{{ theme.like_context }} title" class="field required">
+          <label for="idea[title]">{{ theme.idea_context }} title</label>
+          <input id="title" name="idea[title]" type="text" placeholder="{{ theme.idea_context }} title" class="field required">
         </div>
 
         <div class="input last">
