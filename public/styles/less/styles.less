@@ -42,7 +42,7 @@ h3 { font-size: 1.3em; color: @baseColor; }
 
 // Header
 header { margin: 0 0 40px 0; }
-#top-bar { width: 820px; float: left; position: relative; padding: 15px; #gradient > .vertical(lighten(@lightColor, 20%), @lightColor; .box-shadow; .border-radius; }
+#top-bar { width: 820px; min-height: 34px; float: left; position: relative; padding: 15px; #gradient > .vertical(lighten(@lightColor, 20%), @lightColor; .box-shadow; .border-radius; }
 .logo { float: left; position: relative; }
 
 
@@ -357,14 +357,13 @@ a.feed { float: left; position: relative; display: block; height: 19px; margin: 
 #top-bar h1 {
   float: left;
   position: relative;
-  margin: -1px 0 0 10px;
+  margin: 2px 0 0 0;
   padding: 0;
   font-weight: bold;
-  text-transform: uppercase;
   max-width: 500px;
-  font-size: 2.6em;
+  font-size: 2.2em;
   color: @baseColor;
-  text-shadow: none;
+  text-shadow: 0 1px 0 #EEEEEE;
   a {
     color: @baseColor;
   }
